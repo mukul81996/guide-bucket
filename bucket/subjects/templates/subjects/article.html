@@ -1,0 +1,47 @@
+{% extends "subjects/base.html" %}
+{% load static %}
+{% block content %}
+<div class="highlight-clean">
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean" data-aos="zoom-in-up">
+        <div class="container"><a class="navbar-brand" href="#">Guide Bucket</a><button data-toggle="collapse"
+                class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span
+                    class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse bounce animated" id="navcol-1">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'blog-home' %}">Return
+                            Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+<div class="article-clean">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-xl-8 offset-lg-1 offset-xl-2">
+                <div class="intro">
+                    <h1 class="text-center">{{subject_detail.name}}</h1>
+                    {% static "" as baseUrl %}
+                    <img class="img-fluid" src="{{ baseUrl }}/img/{{subject_detail.name}}.jpeg" />
+                </div>
+                <div class="text">
+                    <h3 class="text-center" class="text-center">Books</h3>
+                    <p>{{subject_detail.books|linebreaks| urlize}}</p>
+                    <h3 class="text-center">Movies</h3>
+                    <p>{{subject_detail.movies|linebreaks| urlize}}</p>
+                    <h3 class="text-center">Documents</h3>
+                    <p>{{subject_detail.docs|linebreaks| urlize}}</p>
+                    <h3 class="text-center">Youtube Channels</h3>
+                    <p>{{subject_detail.yt_channels|linebreaks| urlize}}</p>
+                    <h3 class="text-center">Websites</h3>
+                    <p>{{subject_detail.websites|linebreaks| urlize}}</p>
+                    <h3 class="text-center">Facebook Pages</h3>
+                    <p>{{subject_detail.fb_pages|linebreaks| urlize}}</p>
+                    <h3 class="text-center">Instagram Pages</h3>
+                    <p>{{subject_detail.insta_pages|linebreaks| urlize}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}}

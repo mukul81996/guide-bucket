@@ -1,0 +1,67 @@
+{% extends "subjects/base.html" %}
+{% load static %}
+{% block content %}
+<div class="highlight-clean">
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean" data-aos="zoom-in-up">
+        <div class="container"><a class="navbar-brand" href="#">Guide Bucket</a><button data-toggle="collapse"
+                class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span
+                    class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse bounce animated" id="navcol-1">
+                <ul class="nav navbar-nav ml-auto">
+                    {% for x in subject_list %}
+                    <li class="nav-item" role="presentation"><a class="nav-link"
+                            href="{% url 'subject_detail' x.slug %}">{{x.name}}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+<div class="jumbotron">
+    <div data-aos="zoom-in-down" data-aos-duration="600" class="intro">
+        <header></header>
+        <h2 class="text-center">Awesome Lists </h2>
+        <p class="text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat,
+            pellentesque ut laoreet vitae. </p>
+    </div>
+</div>
+<div class="projects-clean">
+    <div class="container">
+        <div class="row projects">
+            {% for subject in subject_list %}
+            <div class="col-sm-6 col-lg-4 offset-xl-0 item" data-aos="fade-right" data-aos-duration="400"
+                data-aos-delay="200">
+                {% static "" as baseUrl %}
+                <img class="img-fluid" data-bs-hover-animate="pulse"
+                    src="{{ baseUrl }}/img/{{subject.name}}.jpeg">
+                <h3 class="name">{{subject.name}}</h3>
+                {% if subject.name == "Computer Science" %}
+                <p class="description">Interested in studying
+                    computer science and contributing to the next phase of this fast-developing field? Click on the
+                    button
+                    below for more information and facts about it.
+                </p>
+                {% elif subject.name == "Mathematics" %}
+                <p class="description">Mathematics is the science that deals with the logic of shape, quantity and
+                    arrangement. Math is all around us, in everything we do. Wanna learn more! click below </p>
+                {% elif subject.name == "Trading" %}
+                <p class="description">Fundamental trading is a method where a trader focuses on company-specific events
+                    to determine which stock to buy and when to buy it. There are, however, specific
+                    instances where trading on fundamentals can generate substantial profits in a short period. </p>
+                {% elif subject.name == "Economics" %}
+                <p class="description">Economics studies how individuals, businesses, governments, and nations
+                    make choices on allocating resources to satisfy their wants and needs, trying to determine how these
+                    groups should organize and coordinate efforts to achieve maximum output. </p>
+                {% else %}
+                <p class="description">Working on it !</p>
+                {% endif %}
+                <button class="btn btn-outline-primary border rounded shadow"
+                    href="{% url 'subject_detail' subject.slug %} " type="button" style="margin-top: 6px;">Lets
+                    Go
+                </button>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock content %}
