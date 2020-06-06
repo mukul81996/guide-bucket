@@ -1,0 +1,56 @@
+:root {
+  font-size: 15px;
+}
+
+#header {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#header:hover {
+  color: #17a2b8;
+}
+
+body {
+  background-color: #fff;
+  font-family: Lora;
+}
+
+fieldset {
+  margin-left: 10px;
+}
+
+fieldset .form-group {
+  width: 90%;
+}
+
+fieldset .form-group label {
+  font-weight: 300;
+}
+
+.register-text {
+  font-size: 1.2rem;
+  margin-left: 10px;
+}
+
+.form-group button {
+  margin-left: 10px;
+  width: 8rem;
+}
+
+.alert-danger {
+  max-width: 60%;
+}
+
+.footer-dark {
+  max-height: 380px;
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 700px) {
+  .alert-danger {
+    max-width: 90%;
+  }
+}
+/*# sourceMappingURL=login.css.map */

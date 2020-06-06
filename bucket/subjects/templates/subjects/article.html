@@ -1,5 +1,10 @@
 {% extends "subjects/base.html" %}
 {% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/article.css' %}">
+{% endblock css %}
+
 {% block content %}
 <div class="highlight-clean">
     <nav class="navbar navbar-light navbar-expand-md navigation-clean" data-aos="zoom-in-up">

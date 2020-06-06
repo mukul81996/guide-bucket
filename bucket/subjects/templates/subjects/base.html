@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
+    {% block css %}
+    {% endblock css %}
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    <link rel="stylesheet" href="{% static 'css/index.css' %}">
-    <link rel="stylesheet" href="{% static 'css/article.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
 </head>
@@ -23,7 +23,7 @@
     <div data-aos="zoom-in" class="footer-dark">
         <div class="container">
             <div class="row justify-content-around">
-                <div class="col-sm-6 col-md-3 item" style="margin-top: 20px;">
+                <div class="col-sm-6 col-md-3 item" style="margin-top: 10px;">
                     <h3>About</h3>
                     <ul>
                         <li><a href="#">Guide Bucket</a></li>
